@@ -18,6 +18,7 @@ with open('data/names.pkl', 'rb') as f:
     LABELS = pickle.load(f)
 with open('data/faces.pkl', 'rb') as f:
     FACES = pickle.load(f)
+    print(FACES)
 
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(FACES, LABELS)

@@ -53,5 +53,5 @@ else:
         faces = pickle.load(f)
     faces = np.append(faces, faces_data, axis=0)
     with open('data/faces.pkl','wb') as f:
-        pickle.dump(names, f)
+        pickle.dump(faces, f)
         
