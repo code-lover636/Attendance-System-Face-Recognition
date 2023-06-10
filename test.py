@@ -34,13 +34,13 @@ while True:
         output  = knn.predict(resized_img)
         
         ts = time.time()
-        date = datetime.fronttimestamp(ts).strftime("%d-%m-%Y")
-        timestamp = datetime.frontimestamp(ts).strftime("%H:%M:%S")
+        date = datetime.fromtimestamp(ts).strftime("%d-%m-%Y")
+        timestamp = datetime.fromtimestamp(ts).strftime("%H:%M:%S")
         exist = os.path.isfile("Attendance/Attendace"+date+".csv")
         cv2.putText(frame, str(output[0]), (x,y-15), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255), 1)
         cv2.rectangle(frame, (x,y), (x+w, y+h), (50,50,255), 1)
         
-        attendance = [str(output[0], str(timestamp))]
+        attendance = [str(output[0]), str(timestamp)]
         
     cv2.imshow("Frame", frame)
     if cv2.waitKey(1) == ord('o'):
